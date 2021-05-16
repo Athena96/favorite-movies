@@ -29,7 +29,7 @@ const Home = ({ data }) => {
           ))}
         </ul>
       </section>
-      
+
     </Layout>
     )
   } else {
@@ -37,7 +37,7 @@ const Home = ({ data }) => {
   }
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies')
   const data = await res.json()
   return {

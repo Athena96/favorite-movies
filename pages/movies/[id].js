@@ -27,11 +27,22 @@ export default function Movie({ movie }) {
   )
 }
 
-export async function getServerSideProps(context) {
+
+export async function getStaticPaths() {
+  const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies');
+  const data = await res.json();
+  const paths = data.map((movie) => ({
+    params: { id: movie.id },
+  }))
+  
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
   const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies');
   const rawdata = await res.json()
   for (const movie of rawdata) {
-    if (movie.id === context.query.id) {
+    if (movie.id === params.id) {
       return { props: { movie } }
     }
   }
