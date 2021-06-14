@@ -1,1 +1,1 @@
-Demo for Amplify with Friends
+Demo for Amplify with Friends test.
