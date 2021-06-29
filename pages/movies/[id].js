@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
   const rawdata = await res.json()
   for (const movie of rawdata) {
     if (movie.id === params.id) {
-      return { props: { movie } }
+      return { props: { movie }, revalidate: 20 }
     }
   }
 }
