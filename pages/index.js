@@ -23,7 +23,7 @@ const Home = ({ data }) => {
             alt={`image`}
           /> */}
                 <Image
-        src="/staticd/tstimg.png"
+        src="/tstimg.png"
         alt="Picture of the author"
         width={500}
         height={500}
