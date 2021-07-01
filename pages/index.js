@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import utilStyles from '../styles/utils.module.css'
 import Layout from '../components/layout'
+import Image from 'next/image'
 
 const Home = ({ data }) => {
 
@@ -16,11 +17,17 @@ const Home = ({ data }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Favorite Movies - Dynamic (SSR) - {process.env.API_HOST}</h2>
         
-        <img
+        {/* <img
             src={'/static/tstimg.png'}
             width={250}
             alt={`image`}
-          />
+          /> */}
+                <Image
+        src="/staticd/tstimg.png"
+        alt="Picture of the author"
+        width={500}
+        height={500}
+      />
         <ul className={utilStyles.list}>
           {data.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
