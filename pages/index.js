@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import utilStyles from '../styles/utils.module.css'
 import Layout from '../components/layout'
+import Image from 'next/image'
 
 const Home = ({ data }) => {
 
@@ -13,6 +14,12 @@ const Home = ({ data }) => {
         <title>{'Favorite Movies'}</title>
       </Head>
 
+      <Image
+        src="/tst.png"
+        alt="Picture of the author"
+        width={500}
+        height={500}
+      />
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Favorite Movies - Dynamic (SSR) - {process.env.API_HOST}</h2>
         <ul className={utilStyles.list}>
