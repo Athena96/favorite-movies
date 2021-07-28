@@ -5,8 +5,11 @@ import Layout from '../components/layout'
 import Image from 'next/image'
 import Script from 'next/script'
 import myimage from '../public/tst.png'
+import { Logger } from 'aws-amplify';
+const logger = new Logger('foo');
 
 const Home = ({ data }) => {
+  logger.info('info Home');
 
   if (data) {
     return (
@@ -62,6 +65,8 @@ const Home = ({ data }) => {
 }
 
 export async function getServerSideProps() {
+  logger.info('info getServerSideProps');
+
   const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies')
   const data = await res.json()
   return {

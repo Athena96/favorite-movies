@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "aws-amplify": "^4.2.1",
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
     "next": "^11.0.1",
