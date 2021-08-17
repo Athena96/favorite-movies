@@ -14,7 +14,7 @@ const Home = ({ data }) => {
       </Head>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Favorite Movies - Static (SSG)</h2>
+        <h2 className={utilStyles.headingLg}>ISR Test</h2>
         <ul className={utilStyles.list}>
           {data.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
