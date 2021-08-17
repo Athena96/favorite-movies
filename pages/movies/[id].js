@@ -41,13 +41,17 @@ export default function Movie({ movie }) {
 
 
 export async function getStaticPaths() {
-  const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies');
-  const data = await res.json();
-  const paths = data.map((movie) => ({
-    params: { id: movie.id },
-  }))
+  // const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies');
+  // const data = await res.json();
+  // const paths = data.map((movie) => ({
+  //   params: { id: movie.id },
+  // }))
   
-  return { paths, fallback: 'blocking' }
+  // return { paths, fallback: 'blocking' }
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
 }
 
 export async function getStaticProps({ params }) {
@@ -58,11 +62,8 @@ export async function getStaticProps({ params }) {
   for (const m of rawdata) {
     mvs.push(m);
     if (m.id === params.id) {
-
       movie['title'] = m.title;
-
       movie['id'] = m.id;
-
       movie['date'] = m.date;
     }
   }
