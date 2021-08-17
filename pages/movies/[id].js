@@ -1,6 +1,5 @@
 import Layout from '../../components/layout'
 import Head from 'next/head'
-import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 
 export default function Movie({ movie }) {
@@ -19,19 +18,15 @@ export default function Movie({ movie }) {
           /> */}
         </div>
         <h1 className={utilStyles.headingXl}>{movie.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={movie.date} />
-        </div>
 
-        {movie['allMovies'].map(({ id, date, title }) => (
+
+        {movie['allMovies'].map(({ id, title }) => (
             <li className={utilStyles.listItem} key={id}>
 
                 <a>{title}</a>
 
               <br />
-              <small className={utilStyles.lightText}>
-                <small>{date}</small>
-              </small>
+             
             </li>
           ))}
       </article>
@@ -60,7 +55,6 @@ export async function getStaticProps({ params }) {
     if (m.id === params.id) {
       movie['title'] = m.title;
       movie['id'] = m.id;
-      movie['date'] = m.date;
     }
   }
 

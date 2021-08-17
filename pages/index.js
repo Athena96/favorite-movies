@@ -16,15 +16,12 @@ const Home = ({ data }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>ISR Test</h2>
         <ul className={utilStyles.list}>
-          {data.map(({ id, date, title }) => (
+          {data.map(({ id, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/movies/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
-                <small>{date}</small>
-              </small>
             </li>
           ))}
         </ul>
