@@ -35,7 +35,7 @@ export async function getStaticPaths() {
     params: { id: movie.id },
   }))
   
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 
 export async function getStaticProps({ params }) {
@@ -47,7 +47,7 @@ export async function getStaticProps({ params }) {
         props: { 
           movie 
         },
-        revalidate: 60 
+        revalidate: 4 
       }
     }
   }
