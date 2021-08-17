@@ -4,8 +4,7 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 
 export default function Movie({ movie }) {
-console.log('here');
-console.log(movie);
+
   return (
     <Layout>
       <Head>
@@ -59,7 +58,7 @@ export async function getStaticProps({ params }) {
   for (const m of rawdata) {
     mvs.push(m);
     if (m.id === params.id) {
-      console.log('MATCj')
+
       movie['title'] = m.title;
 
       movie['id'] = m.id;
