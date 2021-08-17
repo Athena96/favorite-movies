@@ -1,51 +1,45 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import utilStyles from '../styles/utils.module.css'
-import Layout from '../components/layout'
+// import Layout from '../components/layout'
+// import Head from 'next/head'
+// import Date from '../components/date'
+// import utilStyles from '../styles/utils.module.css'
 
-const Home = ({ data }) => {
+export default function Movie({ movies }) {
 
-  if (data) {
-    return (
+  return (
 
-      <Layout home>
-      <Head>
-        <title>{'Favorite Movies'}</title>
-      </Head>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Favorite Movies - Static (SSG)</h2>
-        <ul className={utilStyles.list}>
-          {data.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/movies/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <small>{date}</small>
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-    </Layout>
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
     )
-  } else {
-    return <></>;
-  }
+
 }
 
+
 export async function getStaticProps() {
-  const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies')
-  const data = await res.json()
-  return {
-    props: {
-      data
+  const res = await fetch('https://6obli1j4bb.execute-api.us-west-2.amazonaws.com/Prod/listMovies');
+  const movies = await res.json()
+  // const movie = {}
+  // let mvs = []
+  // for (const m of rawdata) {
+  //   mvs.push(m);
+  //   if (m.id === params.id) {
+  //     console.log('MATCj')
+  //     movie['title'] = m.title;
+
+  //     movie['id'] = m.id;
+
+  //     movie['date'] = m.date;
+  //   }
+  // }
+
+  // movie['allMovies'] = mvs;
+  return { 
+    props: { 
+      movies 
     },
     revalidate: 10
   }
 }
 
-export default Home
