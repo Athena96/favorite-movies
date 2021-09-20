@@ -20,6 +20,8 @@ const Home = ({ data }) => {
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/movies/${id}`}>
                 <a>{title}</a>
+                <a>{process.env.TEST}</a>
+
               </Link>
               <br />
             </li>
