@@ -7,7 +7,7 @@ export default function Movie({ movie }) {
   return (
     <Layout>
       <Head>
-        <title>{movie.title}</title>
+        <title>{movie.title} Test</title>
       </Head>
       <article>
         <div>
