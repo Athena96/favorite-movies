@@ -17,7 +17,7 @@ export default function Movie({ movie }) {
             alt={`image`}
           /> */}
         </div>
-        <h1 className={utilStyles.headingXl}>{movie.title}</h1>
+        <h1 id="title" className={utilStyles.headingXl}>{movie.title}</h1>
 
 
         {movie['allMovies'].map(({ id, title }) => (
