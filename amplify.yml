@@ -19,7 +19,7 @@ test:
     preTest:
       commands:
         - yarn install
-        - yarn install start-test
+        - yarn add start-test
         - yarn add mocha mochawesome mochawesome-merge mochawesome-report-generator
     test:
       commands:
