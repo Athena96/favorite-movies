@@ -8,19 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "cypress": "^9.0.0",
     "gray-matter": "^4.0.2",
-    "mocha": "^9.1.3",
-    "mochawesome": "^7.0.1",
-    "mochawesome-merge": "^4.2.0",
-    "mochawesome-report-generator": "^6.0.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "remark": "^12.0.0",
     "remark-html": "^12.0.0"
-  },
-  "devDependencies": {
-    "start-server-and-test": "^1.14.0"
   }
 }
