@@ -22,6 +22,7 @@ test:
         - yarn add mocha mochawesome mochawesome-merge mochawesome-report-generator
     test:
       commands:
+        - npm run build
         - npx start-test 'yarn start' 3000 'npx cypress run --reporter mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
     postTest:
       commands:
