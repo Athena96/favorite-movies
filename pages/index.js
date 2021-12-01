@@ -3,6 +3,8 @@ import Link from 'next/link'
 import utilStyles from '../styles/utils.module.css'
 import Layout from '../components/layout'
 
+console.log('process.env.PORT: ' + process.env.PORT);
+
 const Home = ({ data }) => {
 
   if (data) {
