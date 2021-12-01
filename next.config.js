@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const { parsed: myEnv } = require('dotenv').config()
+const { parsed: myEnv } = require('dotenv-flow').config()
 
 console.log('database host:', process.env.DATABASE_HOST);
 console.log('database port:', process.env.DATABASE_PORT);
