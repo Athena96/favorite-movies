@@ -1,5 +1,12 @@
-module.exports = {
+
+/**
+ * @type {import('next').NextConfig}
+ */
+ const nextConfig = {
+    /* config options here */
     env: {
-      TEST: process.env.TEST
-    }
-  };
+        TEST: process.env.TEST
+      }
+  }
+  
+  module.exports = nextConfig
